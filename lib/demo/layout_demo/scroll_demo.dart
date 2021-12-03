@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_collection/demo/layout_demo/grid_view_demo.dart';
 import 'package:flutter_collection/demo/layout_demo/scroll_layout_demo.dart';
 
 class ScrollDemo extends StatelessWidget {
@@ -9,7 +10,8 @@ class ScrollDemo extends StatelessWidget {
       appBar: AppBar(
         title: Text("布局列表"),
       ),
-      body: ListView(//Expanded可以用这个进行包裹
+      body: ListView(
+        //Expanded可以用这个进行包裹
         children: [
           ListItem("SingleChildScrollView", "类似于Android中的ScrollView，它只能接收一个子组件",
               SingleChildScrollViewTestRoute()),
@@ -21,6 +23,13 @@ class ScrollDemo extends StatelessWidget {
                   "它比ListView.builder多了一个separatorBuilder参数，该参数是一个分割组件生成器。",
               ListViewDemoThree()),
           ListItem("listviewDemoFour", "listviwe", ListViewDemoFour()),
+          ListItem("GridView", "GridView", GridViewBuilderDemo()),
+          ListItem(
+              "GridViewExtenDemo", "GridViewExtenDemo", GridViewExtenDemo()),
+          ListItem("GridViewCountDemo", "水平滚动", GridViewCountDemo()),
+          ListItem("CustomScrollView", "可滚动的组件", SliverDemo()),
+          ListItem("CustomScrollViewTestRoute", "CustomScrollViewTestRoute",
+              CustomScrollViewTestRoute()),
         ],
       ),
     );
