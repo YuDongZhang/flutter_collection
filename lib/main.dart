@@ -41,11 +41,11 @@ class ListViewDemo extends StatelessWidget {
             ),
             Text(
               viewBeans[index].title,
-              style: Theme.of(context).textTheme.headline6,
+              style: Theme.of(context).textTheme.bodyLarge,
             ),
             Text(
               viewBeans[index].details,
-              style: Theme.of(context).textTheme.subtitle1,
+              style: Theme.of(context).textTheme.bodyLarge,
             ),
             SizedBox(
               height: 8.0,

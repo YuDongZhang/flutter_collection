@@ -36,11 +36,11 @@ class XAnimationDemo extends StatelessWidget {
             ),
             Text(
               animationBeans[index].title,
-              style: Theme.of(context).textTheme.headline6,
+              style: Theme.of(context).textTheme.bodyLarge,
             ),
             Text(
               animationBeans[index].details,
-              style: Theme.of(context).textTheme.subtitle1,
+              style: Theme.of(context).textTheme.bodyLarge,
             ),
             SizedBox(
               height: 8.0,

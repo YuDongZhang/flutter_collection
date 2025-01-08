@@ -4,8 +4,8 @@ import 'package:webview_flutter/webview_flutter.dart';
 class AnimationWebDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return WebView(
-      initialUrl: 'https://www.baidu.com',
+    return Container(
+
     );
   }
 }
