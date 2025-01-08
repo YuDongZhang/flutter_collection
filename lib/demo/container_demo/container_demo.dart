@@ -10,6 +10,7 @@ class ListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return Container(
       color: Colors.white,
       child: ListTile(
@@ -35,7 +36,15 @@ symmetric({ vertical, horizontal })：用于设置对称方向的填充，vertic
 class PaddingTestRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return Scaffold(
+      appBar: AppBar( 
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+        title: Text('Padding'),
+      ),
+      body: Padding(
       //上下左右各添加16像素补白
       padding: EdgeInsets.all(16.0),
       child: Column(
@@ -60,6 +69,7 @@ class PaddingTestRoute extends StatelessWidget {
             child: Text("Your friend"),
           )
         ],
+      )
       ),
     );
   }
@@ -73,9 +83,17 @@ class ConstrainedBoxDemo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        /*
+    return Scaffold(      
+      appBar: AppBar( 
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+        title: Text('ConstrainedBox'),
+      ),
+      body: Column( 
+        children: [
+          /*
         我们虽然将Container的高度设置为5像素，但是最终却是50像素，这正是ConstrainedBox的最小高度限制生效了。如果将Container的高度设置为80像素，
         那么最终红色区域的高度也会是80像素，因为在此示例中，ConstrainedBox只限制了最小高度，并未限制最大高度。
          */
@@ -139,6 +157,7 @@ class ConstrainedBoxDemo extends StatelessWidget {
           ],
         )
       ],
+      )
     );
   }
 }
@@ -149,6 +168,10 @@ class DecoratedBoxDemo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () => Navigator.of(context).pop(),
+        ),  
         title: Text("装饰容器DecoratedBox"),
       ),
       body: Column(
@@ -218,7 +241,11 @@ class TransformDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: AppBar(   
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
         title: Text('测试'),
       ),
       body: Column(
@@ -300,7 +327,11 @@ class XContainerDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: AppBar(   
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () => Navigator.of(context).pop(),
+        ),  
         title: Text('多功能的包含的组件'),
       ),
       body: Container(
@@ -342,8 +373,15 @@ class ClipTestRoute extends StatelessWidget {
   Widget build(BuildContext context) {
     // 头像
     Widget avatar = Image.asset("images/teacher.png", width: 60.0);
-    return Center(
-      child: Column(
+    return Scaffold(
+      appBar: AppBar( 
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+        title: Text('Clip'),
+      ),
+      body: Column(
         children: <Widget>[
           avatar, //不剪裁
           ClipOval(child: avatar), //剪裁为圆形
@@ -386,7 +424,7 @@ class ClipTestRoute extends StatelessWidget {
                 clipper: MyClipper(), //使用自定义的clipper
                 child: avatar),
           )
-        ],
+        ],            
       ),
     );
   }
@@ -405,6 +443,13 @@ class XFittedBoxDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar( 
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+        title: Text('FittedBox'),
+      ),
       body: Column(
         children: [
           Padding(

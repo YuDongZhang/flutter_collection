@@ -10,6 +10,10 @@ class XFunctionDemo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
         title: Text("布局列表"),
       ),
       body: ListView(
@@ -81,7 +85,15 @@ class _FunctionDemoState extends State<FunctionDemo> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Scaffold(
+      appBar: AppBar( 
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+        title: Text('原始指针事件处理'),
+      ),
+      body:  Column(
       children: [
         Listener(
           child: Container(
@@ -115,6 +127,7 @@ class _FunctionDemoState extends State<FunctionDemo> {
           onPointerDown: (event) => print("up"),
         )
       ],
+      )
     );
   }
 }
@@ -128,7 +141,15 @@ class _GestureTestState extends State<GestureTest> {
   String _operation = "No Gesture detected!"; //保存事件名
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return Scaffold(
+      appBar: AppBar( 
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+        title: Text('手势识别'),
+      ),
+      body: Center(
       child: GestureDetector(
         child: Container(
           alignment: Alignment.center,
@@ -141,8 +162,9 @@ class _GestureTestState extends State<GestureTest> {
           ),
         ),
         onTap: () => updateText("Tap"), //点击
-        onDoubleTap: () => updateText("DoubleTap"), //双击
-        onLongPress: () => updateText("LongPress"), //长按
+          onDoubleTap: () => updateText("DoubleTap"), //双击
+          onLongPress: () => updateText("LongPress"), //长按
+        ),
       ),
     );
   }
@@ -166,7 +188,15 @@ class _DragState extends State<_Drag> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
+    return Scaffold(
+      appBar: AppBar( 
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+        title: Text('拖动'),
+      ),
+      body: Stack(
       children: <Widget>[
         Positioned(
           top: _top,
@@ -193,6 +223,7 @@ class _DragState extends State<_Drag> with SingleTickerProviderStateMixin {
           ),
         )
       ],
+      )
     );
   }
 }
@@ -207,7 +238,15 @@ class _DragVerticalState extends State<_DragVertical> {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
+    return Scaffold(
+      appBar: AppBar( 
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+        title: Text('拖动'),
+      ),
+      body: Stack(
       children: <Widget>[
         Positioned(
           top: _top,
@@ -222,7 +261,8 @@ class _DragVerticalState extends State<_DragVertical> {
           ),
         )
       ],
-    );
+      )
+      );
   }
 }
 
@@ -238,7 +278,15 @@ class _ScaleState extends State<_Scale> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return Scaffold(
+      appBar: AppBar( 
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+        title: Text('缩放'),
+      ),
+      body: Center(
       child: GestureDetector(
         //指定宽度，高度自适应
         child: Image.asset("images/ic_banner_student.png", width: _width),
@@ -249,6 +297,7 @@ class _ScaleState extends State<_Scale> {
           });
         },
       ),
+      )
     );
   }
 }
@@ -273,7 +322,15 @@ class _GestureRecognizerState extends State<_GestureRecognizer> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return Scaffold(
+      appBar: AppBar( 
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+        title: Text('手势识别'),
+      ),
+      body: Center(
       child: Text.rich(
         TextSpan(
           children: [
@@ -295,6 +352,7 @@ class _GestureRecognizerState extends State<_GestureRecognizer> {
           ],
         ),
       ),
+      )
     );
   }
 }
@@ -338,9 +396,18 @@ class PointerDownListenerRoute extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PointerDownListener(
-      child: Text('Click me'),
-      onPointerDown: (e) => print('down'),
+    return Scaffold(
+      appBar: AppBar( 
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+        title: Text('原始指针事件处理'),
+      ),
+      body: PointerDownListener(
+        child: Text('Click me'),
+        onPointerDown: (e) => print('down'),
+      )
     );
   }
 }
@@ -351,11 +418,20 @@ class StackEventTest extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
+    return  Scaffold(
+      appBar: AppBar( 
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+        title: Text('Stack'),
+      ),
+      body: Stack(
       children: [
         wChild(1),
         wChild(2),
       ],
+      )
     );
   }
 
@@ -377,11 +453,20 @@ class HitTestBehaviorTest extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
+    return Scaffold(
+      appBar: AppBar( 
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+        title: Text('HitTestBehavior'),
+      ),
+      body: Stack(
       children: [
         wChild(1),
         wChild(2),
       ],
+      )
     );
   }
 
@@ -400,11 +485,20 @@ class AllChildrenCanResponseEvent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
+    return Scaffold(
+      appBar: AppBar( 
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+        title: Text('HitTestBlocker'),
+      ),
+      body: Stack(
       children: [
         IgnorePointer(child: wChild(1, 200)),
         IgnorePointer(child: wChild(2, 200)),
       ],
+      )
     );
   }
 
@@ -487,11 +581,20 @@ class SHitTestBlockerTest extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
+    return Scaffold(
+      appBar: AppBar( 
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+        title: Text('HitTestBlocker'),
+      ),
+      body:   Stack(
       children: [
         HitTestBlocker(child: wChild(1, 200)),
         HitTestBlocker(child: wChild(2, 200)),
       ],
+      )
     );
   }
 
@@ -512,11 +615,20 @@ class GestureHitTestBlockerTest extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
+    return Scaffold(
+      appBar: AppBar( 
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+        title: Text('HitTestBlocker'),
+      ),
+      body: Stack(
       children: [
         HitTestBlocker(child: wChild(1, 200)),
         HitTestBlocker(child: wChild(2, 200)),
       ],
+      )
     );
   }
 
@@ -548,11 +660,20 @@ class XGestureHitTestBlockerTest extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
+    return Scaffold(
+      appBar: AppBar( 
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+        title: Text('HitTestBlocker'),
+      ),
+      body: Stack(
       children: [
         HitTestBlocker(child: wChild(1, 200)),
         HitTestBlocker(child: wChild(2, 200)),
       ],
+      )
     );
   }
 
@@ -581,7 +702,15 @@ GestureDetector1 获胜，因为只能有一个“竞争者”胜出，所以 Ge
 class ListGesture extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return Scaffold(
+      appBar: AppBar( 
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+        title: Text('手势识别'),
+      ),
+      body: GestureDetector(
       //GestureDetector2
       onTapUp: (x) => print("2"), // 监听父组件 tapUp 手势
       child: Container(
@@ -599,6 +728,7 @@ class ListGesture extends StatelessWidget {
           ),
         ),
       ),
+      )
     );
   }
 }
@@ -618,7 +748,15 @@ class _BothDirectionTestState extends State<_BothDirectionTest> {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
+    return Scaffold(
+      appBar: AppBar( 
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+        title: Text('拖动'),
+      ),
+      body: Stack(
       children: <Widget>[
         Positioned(
           top: _top,
@@ -639,6 +777,7 @@ class _BothDirectionTestState extends State<_BothDirectionTest> {
           ),
         )
       ],
+      )
     );
   }
 }
@@ -655,7 +794,15 @@ class _GestureConflictTestRouteState extends State<GestureConflictTestRoute> {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
+    return Scaffold(
+      appBar: AppBar( 
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+        title: Text('手势冲突'),
+      ),
+      body: Stack(
       children: <Widget>[
         //我们发现没有打印"up"，这是因为在拖动时，刚开始按下手指且没有移动时，拖动手势还没有完整的语义，此时TapDown手势胜出(win)，此时打印"down"，而拖动时，拖动手势会胜出，当手指抬起时，onHorizontalDragEnd 和 onTapUp发生了冲突，但是因为是在拖动的语义中，所以onHorizontalDragEnd胜出，所以就会打印 “onHorizontalDragEnd”。
         Positioned(
@@ -728,6 +875,7 @@ class _GestureConflictTestRouteState extends State<GestureConflictTestRoute> {
           ),
         )
       ],
+      )
     );
   }
 }
@@ -768,7 +916,15 @@ RawGestureDetector customGestureDetector({
 class CustomTapGestureRecognizerTest extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return customGestureDetector(
+    return Scaffold(
+      appBar: AppBar( 
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+        title: Text('自定义手势'),
+      ),
+      body: customGestureDetector(
       // 替换 GestureDetector
       onTap: () => print("2"),
       child: Container(
@@ -783,8 +939,9 @@ class CustomTapGestureRecognizerTest extends StatelessWidget {
             height: 50,
             color: Colors.grey,
           ),
+          ),
         ),
-      ),
+      )
     );
   }
 }
@@ -853,7 +1010,15 @@ var bus = EventBus();
 class NotificationDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return NotificationListener(
+    return Scaffold(
+      appBar: AppBar( 
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+        title: Text('通知'),
+      ),
+      body: NotificationListener(
       onNotification: (notification) {
         switch (notification.runtimeType) {
           case ScrollStartNotification:
@@ -879,6 +1044,7 @@ class NotificationDemo extends StatelessWidget {
               title: Text("$index"),
             );
           }),
+      )
     );
   }
 }
@@ -899,7 +1065,15 @@ class NotificationRouteState extends State<NotificationRoute> {
   @override
   Widget build(BuildContext context) {
     //监听通知
-    return NotificationListener<MyNotification>(
+    return Scaffold(
+      appBar: AppBar( 
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+        title: Text('通知'),
+      ),
+      body: NotificationListener<MyNotification>(
       onNotification: (notification) {
         setState(() {
           _msg += notification.msg + "  ";
@@ -919,7 +1093,7 @@ class NotificationRouteState extends State<NotificationRoute> {
                 return ElevatedButton(
                   //按钮点击时分发通知
                   onPressed: () => MyNotification("Hi").dispatch(context),
-                  child: Text("Send Notification"),
+                  child: Text("Send Notification"),       
                 );
               },
             ),
@@ -927,6 +1101,7 @@ class NotificationRouteState extends State<NotificationRoute> {
           ],
         ),
       ),
+      )
     );
   }
 }

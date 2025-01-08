@@ -20,8 +20,14 @@ class _ChipDemoState extends State<ChipDemo> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('ChipDemo'),
+        title: Text('标签组件示例'),
         elevation: 0.0,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
       ),
       body: Container(
         padding: EdgeInsets.all(16.0),

@@ -5,7 +5,15 @@ class AlignDemo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Align"),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+        title: Text(
+          "Align布局",
+          style: TextStyle(fontSize: 18),
+        ),
+        centerTitle: true,
       ),
       body: Column(
         children: <Widget>[
